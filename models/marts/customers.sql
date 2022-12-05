@@ -7,7 +7,7 @@ customers as (
 
 ),
 
-orders as (
+orders_mart as (
 
     select * from {{ ref('orders') }}
 
@@ -26,7 +26,7 @@ order_summary as (
         sum(subtotal) as lifetime_spend_pretax,
         sum(order_total) as lifetime_spend
 
-    from orders
+    from orders_mart
     group by 1
 
 ),
