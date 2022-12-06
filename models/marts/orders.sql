@@ -92,9 +92,13 @@ joined as (
         locations.location_name
 
     from orders
-    join order_items_summary using (order_id)
-    join order_supplies_summary using (order_id)
-    join locations using (location_id)
+
+    left join order_items_summary
+        on orders.order_id = order_items_summary.order_id
+    left join order_supplies_summary
+        on orders.order_id = order_supplies_summary.order_id
+    left join locations
+        on orders.location_id = locations.location_id
 
 ),
 
