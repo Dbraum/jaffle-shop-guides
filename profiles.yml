@@ -4,20 +4,3 @@ duckdb:
       type: duckdb
       path: ./jaffle_shop_database.duckdb
   target: dev
-# If you want to connect to Snowflake:
-# 1. Comment out the above
-# 2. Uncomment the below
-# 3. Set environment variables for your warehouse's
-#    details and credentials, see README for help
-# snowflake:
-#   outputs:
-#     dev:
-#       type: snowflake
-#       account: "{{ env_var('SNOWFLAKE_SANDBOX_ACCOUNT' }}"
-#       user: "{{ env_var('SNOWFLAKE_SANDBOX_USER' }}"
-#       password: "{{ env_var('SNOWFLAKE_SANDBOX_PASSWORD' }}"
-#       database: analytics
-#       schema: dbt_winnie
-#       role: transformer
-#       threads: 32
-#   target: dev

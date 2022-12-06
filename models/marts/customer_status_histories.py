@@ -16,4 +16,5 @@ def model(dbt, session) -> pd.DataFrame:
     ].shift(1)
     orders_df["next_order_at"] = orders_df.groupby("customer_id")["ordered_at"].shift(
         -1
+    )
     return orders_df
